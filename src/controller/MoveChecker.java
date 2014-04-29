@@ -1,15 +1,11 @@
 package controller;
 
-//import model.*;
-
-//import java.awt.Color;
 
 import view.*;
 
 /**
- * 
- * 
- * Questa classe serve a controllare dove il giocatore può muovere
+ *
+ * Questa classe serve a controllare dove il giocatore puï¿½ muovere
  */
 
 public class MoveChecker {
@@ -56,7 +52,7 @@ public class MoveChecker {
 		    for(int j = 0; j < 8; j++)	
 			if(Board.casella[i][j].getBackground() == Board.green) {
 			    //Board.casella[i][j].select("cyan");
-			    Board.text.setText("Più di una mangiata disponibile. Scegline una.");
+			    Board.text.setText("Piï¿½ di una mangiata disponibile. Scegline una.");
 			    x=1;
 			    select(rig,col);
 
@@ -111,7 +107,7 @@ public class MoveChecker {
 	 */
 
 	if((rig-1)>=0 && (col-1)>=0){
-	    if(Board.casella[rig][col].getPlayer() == 2 && Board.casella[rig-1][col-1].getPlayer() == 0) { //caso 2: sopra a sx è libero
+	    if(Board.casella[rig][col].getPlayer() == 2 && Board.casella[rig-1][col-1].getPlayer() == 0) { //caso 2: sopra a sx ï¿½ libero
 		Board.casella[rig-1][col-1].select("yellow");
 
 		Board.selected = false;
@@ -122,7 +118,7 @@ public class MoveChecker {
 
 	if ((rig-1) >= 0 && (col+1) <= 7) {
 
-	    if(Board.casella[rig][col].getPlayer() == 2 && Board.casella[rig-1][col+1].getPlayer() == 0) { //caso 3: sopra a dx è libero
+	    if(Board.casella[rig][col].getPlayer() == 2 && Board.casella[rig-1][col+1].getPlayer() == 0) { //caso 3: sopra a dx ï¿½ libero
 		Board.casella[rig-1][col+1].select("yellow");
 
 		Board.selected = false;
@@ -144,13 +140,13 @@ public class MoveChecker {
 	 */
 
 	if((rig-1)>=0 && (col-1)>=0)
-	    if(Board.casella[rig-1][col-1].getPlayer() == 0) { //caso 2: sopra a sx è libero
+	    if(Board.casella[rig-1][col-1].getPlayer() == 0) { //caso 2: sopra a sx ï¿½ libero
 		Board.casella[rig-1][col-1].select("yellow");
 		Board.selected = false;
 	    }
 
 	if ((rig-1) >= 0 && (col+1) <= 7) 		
-	    if(Board.casella[rig-1][col+1].getPlayer() == 0) { //caso 3: sopra a dx è libero
+	    if(Board.casella[rig-1][col+1].getPlayer() == 0) { //caso 3: sopra a dx ï¿½ libero
 		Board.casella[rig-1][col+1].select("yellow");
 		Board.selected = false;
 
@@ -175,7 +171,7 @@ public class MoveChecker {
     private void scanSelected() { 
 
 	/**
-	 * Controllo se ci sono altre caselle già selezionate, in quel caso le deseleziono
+	 * Controllo se ci sono altre caselle giï¿½ selezionate, in quel caso le deseleziono
 	 * @param nessuno
 	 */
 
