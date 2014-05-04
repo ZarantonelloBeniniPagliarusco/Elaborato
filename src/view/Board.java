@@ -50,8 +50,6 @@ public class Board extends JFrame {
     public static Color red = new Color(255,55,0);
     public static Color cyan = new Color(110,255,255);
 
-
-
     private JMenuBar bar = new JMenuBar();
 
     public static int pedine1, pedine2;
@@ -72,26 +70,23 @@ public class Board extends JFrame {
 	menu = new JMenu("Partita");
 	newGame = new JMenuItem("Nuova partita");
 	newGame.addActionListener(new newGameListener());
+	
 	about = new JMenuItem("About Dama");
 	about.addActionListener(new aboutListener());
+	
 	patta = new JMenuItem("Proponi patta");
 	patta.addActionListener(new pattaListener());
 
-
 	salva = new JMenuItem("Salva");
 	salva.addActionListener(new salvaListener());
+	
 	carica = new JMenuItem("Carica");
 	carica.addActionListener(new caricaListener());
-
-
-
-
+	
 	menu.add(newGame);
-
 	menu.add(salva);
 	menu.add(carica);
 	menu.add(patta);
-
 	menu.addSeparator();
 	menu.add(about);
 	bar.add(menu);
@@ -103,8 +98,7 @@ public class Board extends JFrame {
 	drawMenu();
 
 	setVisible(true);
-	pedine1 = 12;
-	pedine2 = 12;
+
     }
 
 
@@ -268,7 +262,7 @@ public class Board extends JFrame {
 
     private class aboutListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-	    JOptionPane.showMessageDialog(null, "Gioco della dama italiana\n\tBy Zarantonello Gionata & Benini Alberto for UNiVR 2014\nCopyright all rights reserved", "About Dama", JOptionPane.INFORMATION_MESSAGE);
+	    JOptionPane.showMessageDialog(null, "Gioco della dama italiana\n\tBy Zarantonello Gionata & Benini Alberto & Pagliarusco Luca for UNiVR 2014\nCopyright all rights reserved", "About Dama", JOptionPane.INFORMATION_MESSAGE);
 	}
     }
 
