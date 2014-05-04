@@ -66,11 +66,11 @@ public class AI {
 
     private void damaMangia() {
 	/**
-	 * Controlla se un damone può mangiare
+	 * Controlla se un damone puï¿½ mangiare
 	 */
 	for(int rig = 0; rig < 8; rig++)
 	    for(int col = 0; col < 8; col++) {
-		//priorità alla mangiata
+		//prioritï¿½ alla mangiata
 
 		//controllo damone per mangiare un damone sotto
 
@@ -165,7 +165,7 @@ public class AI {
 
     private void pedinaMangia() {
 	/**
-	 * Controlla se una pedina può mangiare
+	 * Controlla se una pedina puï¿½ mangiare
 	 * Se fa mangiata chiama AIMangiataConsecutiva per vedere se si possono fare mangiate multiple
 	 */
 	for(int rig = 0; rig < 8; rig++)
@@ -174,7 +174,6 @@ public class AI {
 		//controllo pedina per mangiare pedina sotto
 		if((rig+2 <= 7) && (col+2 <= 7) && (rig+1 <= 7) && (col+1 <= 7))
 		    if(Board.casella[rig][col].getPlayer() == 1 && Board.casella[rig+1][col+1].getPlayer() == 2 && Board.casella[rig+2][col+2].getPlayer() == 0) {
-
 			Board.casella[rig][col].setPlayer(0);
 			Board.casella[rig+1][col+1].setPlayer(0);
 			Board.casella[rig+2][col+2].setPlayer(1);
@@ -201,13 +200,12 @@ public class AI {
 
     private void mangiaAncoraAI(int rig, int col) {
 	/**
-	 * Controlla se una pedina che ha già mangiato può farlo nuovamete
+	 * Controlla se una pedina che ha giï¿½ mangiato puï¿½ farlo nuovamete
 	 * @param riga e colonna
 	 */
 	damaCheckAI(rig,col);
 
 	if(Board.casella[rig][col].getPlayer() == 1) {
-
 
 	    if((rig+1) <= 7 && (col-1) >= 0 && (rig+2) <= 7 && (col-2) >= 0)
 		if(Board.casella[rig+1][col-1].getPlayer() == 2 && Board.casella[rig+2][col-2].getPlayer() == 0) {
@@ -288,7 +286,7 @@ public class AI {
 	 */
 	for(int rig = 0; rig < 8; rig++)
 	    for(int col = 0; col < 8; col++) {
-		//priorità a fare il damone
+		//prioritï¿½ a fare il damone
 		if((col-1) >= 0)
 		    if(Board.casella[7][col].getPlayer() == 0 && Board.casella[6][col-1].getPlayer() == 1) {
 			sposta(1,6,col-1,7,col);
@@ -312,20 +310,18 @@ public class AI {
 	 */
 	for(int rig = 0; rig < 8; rig++)
 	    for(int col = 0; col < 8; col++) {
-		//priorità a 2 celle libere sotto
-		//priorità alle mosse del damone
+		//prioritï¿½ a 2 celle libere sotto
+		//prioritï¿½ alle mosse del damone
 
 		if((rig-2 >= 0) && (col - 2 >= 0) && (rig-1 >= 0) && (col-1 >= 0))
 		    if(Board.casella[rig][col].getPlayer() == 11 && Board.casella[rig-1][col-1].getPlayer() == 0 && Board.casella[rig-2][col-2].getPlayer() == 0) {
 			sposta(11,rig,col,rig-1,col-1);
-
 			return;
 		    }
 
 		if((rig-2 >= 0) && (col + 2 <= 7) && (rig-1 >= 0) && (col+1 <= 7))
 		    if(Board.casella[rig][col].getPlayer() == 11 && Board.casella[rig-1][col+1].getPlayer() == 0 && Board.casella[rig-2][col+2].getPlayer() == 0) {
 			sposta(11,rig,col,rig-1,col+1);
-
 			return;
 		    }
 
@@ -333,7 +329,6 @@ public class AI {
 		if((rig+2 <= 7) && (col - 2 >= 0) && (rig+1 <= 7) && (col-1 >= 0))
 		    if(Board.casella[rig][col].getPlayer() == 11 && Board.casella[rig+1][col-1].getPlayer() == 0 && Board.casella[rig+2][col-2].getPlayer() == 0) {
 			sposta(11,rig,col,rig+1,col-1);
-
 			return;
 		    }
 
@@ -396,7 +391,6 @@ public class AI {
 		if(rig != 0 && (rig+2 <= 7) && (col - 2 >= 0) && (rig+1 <= 7) && (col-1 >= 0))
 		    if(Board.casella[rig][col].getPlayer() == 1 && Board.casella[rig+1][col-1].getPlayer() == 0 && (Board.casella[rig+2][col-2].getPlayer() != 2 || Board.casella[rig+2][col-2].getPlayer() != 12) && (Board.casella[rig+2][col].getPlayer()!=2 || Board.casella[rig+2][col].getPlayer()!=12) && Board.casella[rig][col-2].getPlayer() != 12) {
 			sposta(1,rig,col,rig+1,col-1);
-
 			return;
 		    }
 
@@ -416,19 +410,17 @@ public class AI {
 	 */
 	for(int rig = 0; rig < 8; rig++)
 	    for(int col = 0; col < 8; col++) {
-		//priorità a 1 cella libera sotto
+		//prioritï¿½ a 1 cella libera sotto
 		//damone
 		if((rig-2 >= 0) && (col - 2 >= 0) && (rig-1 >= 0) && (col-1 >= 0))
 		    if(Board.casella[rig][col].getPlayer() == 11 && Board.casella[rig-1][col-1].getPlayer() == 0) {
 			sposta(11,rig,col,rig-1,col-1);
-
 			return;
 		    }
 
 		if((rig-2 >= 0) && (col + 2 <= 7) && (rig-1 >= 0) && (col+1 <= 7))
 		    if(Board.casella[rig][col].getPlayer() == 11 && Board.casella[rig-1][col+1].getPlayer() == 0) {
 			sposta(11,rig,col,rig-1,col+1);
-
 			return;
 		    }
 
@@ -436,7 +428,6 @@ public class AI {
 		if((rig+2 <= 7) && (col - 2 >= 0) && (rig+1 <= 7) && (col-1 >= 0))
 		    if(Board.casella[rig][col].getPlayer() == 11 && Board.casella[rig+1][col-1].getPlayer() == 0) {
 			sposta(11,rig,col,rig+1,col-1);
-
 			return;
 		    }
 
