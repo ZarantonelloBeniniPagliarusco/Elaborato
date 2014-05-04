@@ -41,7 +41,6 @@ public class MoveMaker {
 		Board.casella[rig-1][col-1].setPlayer(0);
 		damaCheck(rig,col);
 		unselectAll();
-
 		moveAI();
 		return;
 
@@ -92,6 +91,7 @@ public class MoveMaker {
 		return;
 
 	    }
+	    
 	muoviD(rig,col); //se arriviamo a questo punto, vuol dire che abbiamo selezionato un damone
 	Board.selected = false;
 	pedina.moveChecker.select(rig,col);
@@ -129,7 +129,6 @@ public class MoveMaker {
 		else if(Board.casella[rig][col].getPlayer() == 0 && Board.casella[rig-1][col-1].getPlayer() == 12 && Board.casella[rig-1][col-1].isSelected()) {
 		    Board.casella[rig][col].setPlayer(12);
 		    Board.casella[rig-1][col-1].setPlayer(0);
-
 		    unselectAll();
 		    moveAI();
 		    return;
@@ -144,11 +143,9 @@ public class MoveMaker {
 	    if(Board.casella[rig][col].getPlayer() == 0 && Board.casella[rig+1][col+1].getPlayer() == 12 && Board.casella[rig+1][col+1].isSelected()) {
 		Board.casella[rig][col].setPlayer(12);
 		Board.casella[rig+1][col+1].setPlayer(0);
-
 		unselectAll();
 		moveAI();
 		return;
-
 	    }
 
 	if((rig+1) <= 7 && (col-1) >= 0)
@@ -157,9 +154,7 @@ public class MoveMaker {
 		Board.casella[rig+1][col-1].setPlayer(0);
 		unselectAll();
 		moveAI();
-
 		return;
-
 	    }
 
 
@@ -205,7 +200,7 @@ public class MoveMaker {
 
     public void damaCheck(int rig, int col) {
 	/**
-	 * Controlla se una pedina a seguito di una mossa è diventata dama
+	 * Controlla se una pedina a seguito di una mossa ï¿½ diventata dama
 	 * @param riga e colonna
 	 */
 	if(rig == 0) {
