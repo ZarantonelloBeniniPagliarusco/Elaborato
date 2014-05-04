@@ -100,7 +100,6 @@ public class Eater {
 		if(selectMangia(rig, col)==0)
 		    moveAI();
 		return;
-
 	    }
 
 	if((rig+1) <= 7 && (col+1) <= 7 && (rig+2) <= 7 && (col+2) <= 7)
